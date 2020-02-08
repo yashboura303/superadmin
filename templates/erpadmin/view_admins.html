@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}
+   View admins
+{% endblock title %}
+{% block content %}
+<div class="container-fluid">
+    {% include "messages.html" %}
+    <h2 class="text-center mt-3 ">ERP Detials List</h2>
+    <table class="mt-5 table table-secondary table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th scope="col">School</th>
+                <th scope="col">School URL</th>
+                <th scope="col">Admin Username</th>
+                <th scope="col">Admin Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for erp in erps %}
+            <tr>
+                <th scope="row">{{ erp.school}}</th>
+                <th scope="row">{{ erp.school_url}}</th>
+                <th scope="row">{{ erp.admin_username}}</th>
+                <th scope="row">{{ erp.admin_password}}</th>
+        </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

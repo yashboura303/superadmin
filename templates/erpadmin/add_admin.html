@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}
+  Home | Add admin
+{% endblock title %}
+{% block content %}
+{% include "messages.html" %}
+<h3 class="text-left text-info my-4">Add School ERP Admin</h3>
+<hr>
+  <form action="{% url 'addAdmin' %}" class= " w-50"method="POST">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="">School Name</label>
+        <input type="text"
+          class="form-control" name="school" id="" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="">School URL</label>
+        <input type="text"
+          class="form-control" name="school_url" id="" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="">Admin Username</label>
+        <input type="text"
+          class="form-control" name="admin_username" id="" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="">Admin Password</label>
+        <input type="password"
+          class="form-control" name="admin_password" id="" placeholder="">
+      </div>
+      <button type="submit" class="btn btn-outline-success">Submit</button>
+  </form>
+  {% endblock content %}
